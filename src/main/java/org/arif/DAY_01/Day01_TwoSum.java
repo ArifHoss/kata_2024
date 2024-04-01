@@ -8,7 +8,7 @@ public class Day01_TwoSum {
     public static void main(String[] args) {
         int[] nums = {2, 7, 11, 5};
         int target = 9;
-        int[] result = twoSum(nums, target);
+        int[] result = twoSum02(nums, target);
         System.out.println(Arrays.toString(result));
     }
 

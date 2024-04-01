@@ -3,9 +3,26 @@
  * @return {boolean}
  */
 const isPalindrome = function (x) {
-
+    const s = x.toString();
+    const reversedS = s.split("").reverse().join("");
+    return s === reversedS;
 }
-
+//
+// const isPalindrome = function (x) {
+//
+//     if (x < 0) return false;
+//
+//     let reversed = 0;
+//     let temp = x;
+//     while (temp > 0) {
+//         const digit = temp % 10;
+//         reversed = reversed * 10 + digit;
+//         temp = parseInt(temp / 10);
+//     }
+//     return reversed === x;
+//
+// }
+//
 
 const x = 121;
 const check = isPalindrome(x);
