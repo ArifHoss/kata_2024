@@ -1,3 +1,12 @@
+// function isPalindrome(x) {
+//     let str_x = x.toString();
+//     return str_x === str_x.split('').reverse().join('');
+// }
+
+
+// let x = 121;
+// console.log(isPalindrome(x)); 
+
 
 var isPalindrome = function(x) {
     let originArr = x.toString().split('')
