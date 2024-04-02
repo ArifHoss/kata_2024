@@ -19,31 +19,8 @@ public class RomanToInteger {
         System.out.println(result);
     }
 
+
     private static int romanToInt(String s) {
-        Map<Character, Integer> map = new HashMap<>();
-        map.put('I', 1);
-        map.put('V', 5);
-        map.put('X', 10);
-        map.put('L', 50);
-        map.put('C', 100);
-        map.put('D', 500);
-        map.put('M', 1000);
-
-        int result = 0;
-        int length = s.length();
-        for (int i = 0; i < length; i++) {
-            char roman = s.charAt(i);
-            Integer value = map.get(roman);
-            if (i < length - 1 && value < map.get(s.charAt(i + 1))) {
-                result -= value;
-            } else {
-                result += value;
-            }
-        }
-        return result;
-    }
-
-    private static int romanToInt01(String s) {
         Map<Character, Integer> map = new HashMap<>();
         map.put('I', 1);
         map.put('V', 5);
@@ -57,8 +34,8 @@ public class RomanToInteger {
         int length = s.length();
         for (int i = 0; i < length; i++) {
 
-            char key = s.charAt(i);
-            Integer value = map.get(key);
+            char romanKey = s.charAt(i);
+            Integer value = map.get(romanKey);
 
             if (i < length - 1 && value < map.get(s.charAt(i + 1))) {
                 toInt -= value;
