@@ -1,3 +1,35 @@
+const romanToInteger = (s) => {
+    const map = new Map();
+    map.set('I',1);
+    map.set('V',5);
+    map.set('X',10);
+    map.set('L',50);
+    map.set('C',100);
+    map.set('D',500);
+    map.set('M',1000);
+
+    let n = s.length;
+    let result = 0;
+
+    for (let i = 0; i < n.length; i++) {
+        let roman = s.charAt(i);
+        let intValue = map.get(roman);
+        if (i < n - 1 && intValue < map.get(s.charAt(i + 1))) {
+            result -= intValue;
+        } else {
+            result += intValue;
+        }
+
+    }
+    return result;
+
+
+}
+
+const s = "III";
+const result = romanToInteger(s);
+console.log(result)
+
 /**
  * 13. Roman to Integer
  * Solved
