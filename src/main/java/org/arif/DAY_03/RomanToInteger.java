@@ -22,6 +22,7 @@ public class RomanToInteger {
 
     private static int romanToInt(String s) {
         Map<Character, Integer> map = new HashMap<>();
+
         map.put('I', 1);
         map.put('V', 5);
         map.put('X', 10);
@@ -30,41 +31,41 @@ public class RomanToInteger {
         map.put('D', 500);
         map.put('M', 1000);
 
-        int toInt = 0;
+        int result = 0;
         int length = s.length();
         for (int i = 0; i < length; i++) {
 
-            char romanKey = s.charAt(i);
-            Integer value = map.get(romanKey);
+            char roman = s.charAt(i);
+            Integer value = map.get(roman);
 
             if (i < length - 1 && value < map.get(s.charAt(i + 1))) {
-                toInt -= value;
+                result -= value;
             } else {
-                toInt += value;
+                result += value;
             }
         }
 
-        return toInt;
+        return result;
     }
 
     private static int romanToInt02(String s) {
-        int total = 0;
+        int result = 0;
         for (int i = 0; i < s.length(); i++) {
 
             int current = romanCharToInteger(s.charAt(i));
             if (i + 1 < s.length()) {
                 int next = romanCharToInteger(s.charAt(i + 1));
                 if (current < next) {
-                    total += current;
+                    result += current;
                 } else {
-                    total += current;
+                    result += current;
                 }
             } else {
-                total += current;
+                result += current;
             }
         }
 
-        return total;
+        return result;
     }
 
     private static int romanCharToInteger(char c) {
