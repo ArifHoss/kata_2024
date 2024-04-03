@@ -10,7 +10,7 @@ var romanToInt = function (s) {
         "M": 1000,
     };
     const stringToArray = s.split('');
-    console.log(stringToArray)
+    //console.log(stringToArray)
     let result = [];
     for (let i = 0; i < stringToArray.length; i++) {
         let currentIndex = stringToArray[i];
@@ -29,7 +29,7 @@ var romanToInt = function (s) {
         }
         i--
     }
-    return result.reduce((accumulator, currentValue) => accumulator + currentValue, 0,);;
+    return result.reduce((accumulator, currentValue) => accumulator + currentValue, 0,);
 };
 
 console.log(romanToInt("LVIII"))
