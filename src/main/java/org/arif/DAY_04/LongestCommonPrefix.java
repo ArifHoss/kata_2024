@@ -3,12 +3,12 @@ package org.arif.DAY_04;
 import java.util.Arrays;
 
 public class LongestCommonPrefix {
-//    public static void main(String[] args) {
-//
-//        String[] strs = {"flower", "flow", "flight"};
-//        String result = longestCommonPrefix(strs);
-//        System.out.println(result);
-//    }
+    public static void main(String[] args) {
+
+        String[] strs = {"flower", "flow", "flight"};
+        String result = longestCommonPrefix(strs);
+        System.out.println(result);
+    }
 
     public static String longestCommonPrefix(String[] strs) {
         for (int i = 0; i < strs[0].length(); i++) {
