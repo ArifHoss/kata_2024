@@ -1,4 +1,4 @@
-package org.arif.MEDIUM;
+package org.arif.DAILY_CHALANGE;
 
 import org.junit.jupiter.api.Test;
 
