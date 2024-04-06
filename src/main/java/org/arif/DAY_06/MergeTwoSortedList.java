@@ -2,6 +2,7 @@ package org.arif.DAY_06;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -38,6 +39,8 @@ public class MergeTwoSortedList {
     }
 
     public static void main(String[] args) {
+
+
         List<Integer> list1 = List.of(1, 2, 4);
         List<Integer> list2 = List.of(1, 3, 5);
 
