@@ -2,26 +2,29 @@ package org.arif.DAILY_CHALANGE;
 
 public class Main {
     public static void main(String[] args) {
-        StringBuilder sb = new StringBuilder("leEeetcode");
+        String s = "(*))";
+        boolean result = validParenthesisString(s);
+        System.out.println(result);
+    }
+    private static boolean validParenthesisString(String s) {
+        int left = 0, right = 0;
 
-        int i = 0;
-        while (i < sb.length() - 1) {
-            char x = sb.charAt(i);
-            char y = sb.charAt(i + 1);
-            if (Math.abs(x - y) == 32) {
-                sb.delete(i, i + 2);
-                if (i > 0) {
-                    i--;
-                } else {
-                    i++;
-                }
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c == '(') {
+                left++;
+                right++;
+            } else if (c == ')') {
+                left--;
+                right--;
             } else {
-                i++;
+                left--;
+                right++;
             }
-
+            if (right < 0) return false;
+            if (left < 0) left = 0;
         }
-
-            System.out.println(sb);
+        return left == 0;
 
     }
 }
