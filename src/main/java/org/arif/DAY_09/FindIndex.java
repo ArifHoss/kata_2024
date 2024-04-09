@@ -2,6 +2,7 @@ package org.arif.DAY_09;
 
 public class FindIndex {
     public int strStr(String hayStack, String needle) {
+        System.out.println(hayStack.length() - needle.length());
         if (hayStack.contains(needle)) {
             return hayStack.indexOf(needle);
         } else {

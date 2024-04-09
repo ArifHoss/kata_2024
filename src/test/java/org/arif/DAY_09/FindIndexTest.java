@@ -9,7 +9,7 @@ class FindIndexTest {
     @Test
     void strStr() {
         FindIndex index = new FindIndex();
-        String haystack = "sadbutsad", needle = "sad";
+        String haystack = "sadbutsad", needle = "sadbut";
         int actual = index.strStr(haystack, needle);
         assertEquals(0, actual);
     }
