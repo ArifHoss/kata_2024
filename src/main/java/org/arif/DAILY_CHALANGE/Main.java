@@ -2,10 +2,27 @@ package org.arif.DAILY_CHALANGE;
 
 public class Main {
     public static void main(String[] args) {
-        String s = "(*))";
-        boolean result = validParenthesisString(s);
+        int[] nums = {2, 3, 2};
+        int result = timeNeed(nums, 2);
         System.out.println(result);
     }
+
+    private static int timeNeed(int[] nums, int k) {
+        int index = 0, counter = 0;
+
+        while ( nums[k] > 0) {
+
+            if (index >= nums.length) index = 0;
+
+            if (nums[index] > 0) {
+                nums[index]--;
+                counter++;
+            }
+            index++;
+        }
+        return counter;
+    }
+
     private static boolean validParenthesisString(String s) {
         int left = 0, right = 0;
 
