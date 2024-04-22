@@ -1,33 +1,28 @@
 package org.arif;
 
-import java.util.Arrays;
-import java.util.Deque;
-import java.util.LinkedList;
-
 public class Main {
     public static void main(String[] args) {
-        int[] deck = {17, 13, 11, 2, 3, 5, 7};
-//        System.out.println("deck before sort = "+Arrays.toString(deck));
-        Arrays.sort(deck);
-//        System.out.println("deck after sort = "+Arrays.toString(deck));
-        int n = deck.length;
-        Deque<Integer> ques = new LinkedList<>();
-        for (int i = 0; i < n; i++) {
-            ques.add(i);
-        }
-//        System.out.println("ques = "+ques);
-        int[] ans = new int[n];
-//        Integer polled = ques.poll();
-//        System.out.println("polled "+polled);
-//        System.out.println("ques after polled = "+ques);
-        for (int i = 0; i < n; i++) {
-            Integer polled = ques.poll();
-            ans[polled] = deck[i];
-            if (!ques.isEmpty()) {
-                ques.add(ques.poll());
+        int[][] grid = {{0, 1, 0, 0}};
+
+        int result = islandP(grid);
+        System.out.println(result);
+    }
+
+    private static int islandP(int[][] grid) {
+        int counter = 0;
+        for (int row = 0; row < grid.length; row++) {
+            for (int column = 0; column < grid[row].length; column++) {
+                if (grid[row][column] == 1) {
+                    counter += 4;
+                    if (row > 0 && grid[row - 1][column] == 1) {
+                        counter -= 2;
+                    }
+                    if (column > 0 && grid[row][column - 1] == 1) {
+                        counter -= 2;
+                    }
+                }
             }
         }
-
-        System.out.println("answer = "+Arrays.toString(ans));
+        return counter;
     }
 }
