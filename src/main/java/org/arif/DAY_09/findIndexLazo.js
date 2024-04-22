@@ -15,8 +15,7 @@ var strStr = function(haystack, needle) {
                 i++;
                 j++
             }else{
-                return -1;
-               
+                return -1;  
             }
         }
         return haystackArr.indexOf(currentChar)
